@@ -3,7 +3,7 @@
 
 static daisy::DaisySeed hw;
 
-void passthru(float **in, float**out, size_t size)
+void passthru(float **in, float **out, size_t size)
 {
     memcpy(out, in, size * 2 * sizeof(in[0][0]));
 }
@@ -14,7 +14,7 @@ int main(void)
     hw.Configure();
     hw.Init();
     hw.StartAudio(passthru);
-    for (;;)
+    for(;;)
     {
         hw.SetLed(state);
         state = !state;
