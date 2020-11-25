@@ -12,12 +12,12 @@ int main(void)
 {
     bool state = false;
     hw.Configure();
-    hw.Init();
+        hw.Init();
     hw.StartAudio(passthru);
     for(;;)
     {
         hw.SetLed(state);
-        state = !state;
+    state = !state;
         dsy_system_delay(250);
     }
 }
