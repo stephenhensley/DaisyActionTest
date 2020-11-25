@@ -13,6 +13,7 @@ int main(void)
     bool state = false;
     hw.Configure();
     hw.Init();
+    hw.StartAudio(passthru);
     for (;;)
     {
         hw.SetLed(state);
