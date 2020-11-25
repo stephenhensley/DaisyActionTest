@@ -95,8 +95,8 @@ def run():
             newobj = Example(ex, ex_key)
             olist.append(newobj)
 
-    if args.rewrite:
-        shutil.rmtree('./dist')
+    if args.rewrite and os.path.isdir('./dist'):
+            shutil.rmtree('./dist')
 
     # Creating New Build Dir
     for example in olist:
