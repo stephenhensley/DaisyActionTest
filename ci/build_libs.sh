@@ -1,10 +1,8 @@
 #!/bin/bash
 
 START_DIR=$PWD
-LIBDAISY_DIR=./libDaisy
-DAISYSP_DIR=./DaisySP
+LIBDAISY_DIR=$PWD/libDaisy
+DAISYSP_DIR=$PWD/DaisySP
 
-cd $LIBDAISY_DIR ; make clean ; make
-cd $PWD
-cd $DAISYSP_DIR ; make clean ; make
-cd $PWD
+cd $LIBDAISY_DIR ; make clean ; make | grep "warning\|error" ;
+cd $DAISYSP_DIR ; make clean ; make | grep "warning\|error" ;
