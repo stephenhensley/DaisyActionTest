@@ -4,12 +4,12 @@ static daisy::DaisySeed hw;
 int main(void)
 {
     bool state = false;
-        hw.Configure();
-        hw.Init();
+    hw.Configure();
+    hw.Init();
     for(;;)
     {
         hw.SetLed(state);
-state = !state;
+        state = !state;
         dsy_system_delay(125);
     }
 }
