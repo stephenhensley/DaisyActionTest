@@ -1,4 +1,4 @@
-name: fix style
+name: Fix Style
 
 on: 
   push:
