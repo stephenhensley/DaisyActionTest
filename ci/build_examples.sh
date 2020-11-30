@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "building examples:"
 start_dir=$PWD
-example_dirs=( examples )
+example_dirs=( seed )
 for e in ${example_dirs[@]}; do
     for d in $e/*/; do
         echo "building $d"
