@@ -14,6 +14,20 @@ The CI pipeline used herein falls into three categories:
 
 Each of those is handled using Github Actions.
 
+# Usage
+
+1. copy the .github/workflows that you want to use
+2. copy the ci/ directory to your local project
+3. edit the workflow for any paths that are specific to your project (specifically extensions, excludes, etc. for style workflows)
+4. edit the build scripts to match any local directory structure.
+5. Set the `ci/*.sh` scripts to be executable by running: `git update-index --chmod=+x ./ci/build_libs.sh ./ci/build_examples.sh ./ci/build_dist.py`
+
+As mentioned below, there are two style workflows. The only difference between them being that one will actually apply the style fixes inplace and commit them.
+
+There isn't any reason to use both, and without proper sequencing the check-without-fix workflow will fail before the fix is applied, causing a false fail if using both workflows. (This can be fixed by triggering the check from the fix workflow, but it seems suitable just to choose one or the other.)
+
+# Overview of Contents
+
 ## Build And Deploy
 
 This is the meat and potatoes of the CI process here
